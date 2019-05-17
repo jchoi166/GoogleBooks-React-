@@ -14,7 +14,7 @@ const styles = theme => ({
     paper: {
       // margin: theme.spacing.unit,
       height: '100%',
-      backgroundColor: 'red',
+      // backgroundColor: 'red',
       // zIndex: 2,
       position: 'absolute',
       width: "100%"
@@ -73,8 +73,9 @@ class Test extends React.Component{
         return(
             <>
                 <CustomNav/>
-                <Navbar/>
+                {/* <Navbar/> */}
                   {/* <Fade in={checked} timeout={1000}> */}
+                  
                     <Paper className={checked? classes.paper: classes.noPaper} >
                      
                       Hello
