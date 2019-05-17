@@ -4,6 +4,7 @@ import Fade from '@material-ui/core/Fade';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import CustomNav from '../components/CustomNav'
 
 const styles = theme => ({
     root: {
@@ -14,7 +15,7 @@ const styles = theme => ({
       // margin: theme.spacing.unit,
       height: '100%',
       backgroundColor: 'red',
-      zIndex: 2,
+      // zIndex: 2,
       position: 'absolute',
       width: "100%"
 
@@ -71,9 +72,9 @@ class Test extends React.Component{
         
         return(
             <>
-            
+                <CustomNav/>
                 <Navbar/>
-                  <Fade in={checked} timeout={1000}>
+                  {/* <Fade in={checked} timeout={1000}> */}
                     <Paper className={checked? classes.paper: classes.noPaper} >
                      
                       Hello
@@ -83,7 +84,7 @@ class Test extends React.Component{
                         <button>Press Me</button>
                       </form>
                     </Paper>
-                </Fade>
+                {/* </Fade> */}
            
             </>
         )
