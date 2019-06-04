@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import CustomNav from '../components/CustomNav'
-
+import Grid from '@material-ui/core/Grid'
 const styles = theme => ({
     root: {
       height: 180,
@@ -72,11 +72,12 @@ class Test extends React.Component{
         
         return(
             <>
+              <div style ={{margin: '25px'}}>
                 <CustomNav/>
                 {/* <Navbar/> */}
                   {/* <Fade in={checked} timeout={1000}> */}
                   
-                    <Paper className={checked? classes.paper: classes.noPaper} >
+                    <Paper className={checked? classes.paper: classes.noPaper} elevation = {0}>
                      
                       Hello
                       THere
@@ -86,7 +87,7 @@ class Test extends React.Component{
                       </form>
                     </Paper>
                 {/* </Fade> */}
-           
+                </div>
             </>
         )
     }
