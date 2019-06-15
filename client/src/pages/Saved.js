@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import API from '../utils/API'
+import CustomNav from '../components/CustomNav'
 
 class Saved extends Component {
     state = {
@@ -23,27 +24,27 @@ class Saved extends Component {
 
         
         return (
-            <>
-
+            <div style ={{margin: '50px'}}>
+            <CustomNav/>
             <h1 style={{backgroundColor: 'red'}}>This is Saved</h1>
             <h2>Here are your saved books:</h2>
             {this.state.savedBooks.map(book => 
-            <div key={book._id}>
-               <img src={book.imageURL} alt= {book.imageURL}></img>
-               <p>
-               Title: {book.title} 
-               <br/>
-               Author:{book.author}
-               <br/>
-               Description:{book.description}
-               <br/>
-               Link:{book.link}
-               <br/>
-               </p>
-               <button value= {book._id} onClick= {this.deleteBook}>Delete Book</button>
-            </div>
+                <div key={book._id}>
+                    <img src={book.imageURL} alt= {book.imageURL}></img>
+                    <p>
+                    Title: {book.title} 
+                    <br/>
+                    Author:{book.author}
+                    <br/>
+                    Description:{book.description}
+                    <br/>
+                    Link:{book.link}
+                    <br/>
+                    </p>
+                    <button value= {book._id} onClick= {this.deleteBook}>Delete Book</button>
+                    </div>
             )}
-            </>
+            </div>
         )
     }
 }

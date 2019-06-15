@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import {Link} from 'react-router-dom'
 
 const styles = theme => ({
   root: {
@@ -22,7 +23,12 @@ const styles = theme => ({
     fontFamily: 'Georgia',
     fontSize: '43px'
   },
- 
+  list: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    listStyle: 'none',
+    fontFamily: 'Arial'
+  }
 });
 
 function CustomNav(props) {
@@ -30,22 +36,27 @@ function CustomNav(props) {
 
   return (
     <div className={classes.root}>
-    <Grid container>
-      <Grid container lg={6} className={classes.div}>
-        <Paper className={classes.title} elevation={0}>Hello There</Paper>
+    
+      <Grid container spacing={8} >
+        <Grid item xs>
+          <Link to = '/' style = {{color:'black',textDecoration:'none'}}>
+            <div className = {classes.title}>Catalog</div>
+          </Link>
+        </Grid>
+        <Grid item xs>
+          {/* <div>Hello</div> */}
+          <ul className = {classes.list}>
+            <Link to = '/' style = {{color:'black',textDecoration:'none'}}>
+              <li>Search</li>
+            </Link>
+            <Link to = '/saved' style = {{color:'black',textDecoration:'none'}}>
+              <li>Saved</li>
+            </Link>
+            <li>Jeff</li>
+          </ul>
+        </Grid>
       </Grid>
-      <Grid container spacing={8} justify= 'flex-end' lg={6}>
-        <Grid item xs={12} lg ={3}>
-          <Paper className={classes.paper} elevation={0}>xs=12</Paper>
-        </Grid>
-        <Grid item xs={6} lg= {3}>
-          <Paper className={classes.paper} elevation={0}>xs=12</Paper>          
-        </Grid>
-        <Grid item xs={6} lg={3}>
-          <Paper className={classes.paper} elevation={0}>xs=12</Paper>
-        </Grid>
-      </Grid>
-    </Grid>
+    
     </div>
   );
 }

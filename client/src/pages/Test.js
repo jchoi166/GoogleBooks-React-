@@ -72,7 +72,7 @@ class Test extends React.Component{
         
         return(
             <>
-              <div style ={{margin: '25px'}}>
+              <div style ={{margin: '50px'}}>
                 <CustomNav/>
                 {/* <Navbar/> */}
                   {/* <Fade in={checked} timeout={1000}> */}
@@ -87,7 +87,7 @@ class Test extends React.Component{
                       </form>
                     </Paper>
                 {/* </Fade> */}
-                </div>
+              </div>
             </>
         )
     }
