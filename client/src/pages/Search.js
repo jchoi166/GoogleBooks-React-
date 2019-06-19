@@ -74,7 +74,8 @@ class Search extends Component {
 
         return (
         
-            <div style ={{margin: '50px', position: 'relative', minHeight: '100%'}}>
+            <div style ={{position: 'relative', minHeight: '100%'}}>
+            <div style ={{margin: '50px 50px 0px 50px',}}>
             <CustomNav/>
                 <div style={{paddingBottom: '150px'}}>
                         <form onSubmit= {this.formatTitle} style={{marginTop: "20px"}}>
@@ -104,6 +105,7 @@ class Search extends Component {
                                 )}
                                 </ul>
                             </div>
+                    </div>
                     </div>
             <Footer/>
             </div>
