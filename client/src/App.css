@@ -4,8 +4,15 @@ html{
     /* position: relative; */
 }
 
-body{
+body, #root{
     height: 100%;
     margin: 0px;
-    /* position: relative; */
+    position: relative;
+}
+
+#routeContainer {
+    height: 100%
+}
+#hello {
+    height: 100%
 }

@@ -26,7 +26,6 @@ class Saved extends Component {
         return (
             <div style ={{margin: '50px'}}>
             <CustomNav/>
-            <h1 style={{backgroundColor: 'red'}}>This is Saved</h1>
             <h2>Here are your saved books:</h2>
             {this.state.savedBooks.map(book => 
                 <div key={book._id}>

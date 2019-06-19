@@ -2,12 +2,10 @@ import React, {Component} from 'react'
 import API from '../utils/API'
 import axios from 'axios';
 import CustomNav from '../components/CustomNav'
-
+import Footer from '../components/Footer'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import {BrowserRouter as Router, Link} from 'react-router-dom'
 
 const styles = {
     navbar: {
@@ -36,7 +34,7 @@ class Search extends Component {
         event.preventDefault()
         let originalString = this.state.title
         let newString = originalString.replace(/ /gi, "+")
-        this.setState({title: newString})
+        // this.setState({title: newString})
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${newString}`)
             .then(r => {
                 console.log(r.data.items)
@@ -75,15 +73,15 @@ class Search extends Component {
         const { classes } = this.props;
 
         return (
-            <div style ={{margin: '50px'}}>
+        
+            <div style ={{margin: '50px', position: 'relative', minHeight: '100%'}}>
             <CustomNav/>
-                <Grid container>
-                    <Grid item>
-                        <form onSubmit= {this.formatTitle}>
+                <div style={{paddingBottom: '150px'}}>
+                        <form onSubmit= {this.formatTitle} style={{marginTop: "20px"}}>
                             <input value= {this.state.title} onChange = {this.handleChange} type='text' />
                             <button>Press Me</button>
                         </form>
-                        <p>{this.state.title}</p>
+                        {/* <p>{this.state.title}</p> */}
                         <div style={{width: '70%'}}>
                             <ul style={{padding: '0px'}}>
                                 {this.state.movieObj.map((book) => 
@@ -106,9 +104,10 @@ class Search extends Component {
                                 )}
                                 </ul>
                             </div>
-                    </Grid>
-                </Grid>
+                    </div>
+            <Footer/>
             </div>
+            
         )
     }
 }

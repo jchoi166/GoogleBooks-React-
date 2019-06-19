@@ -40,19 +40,22 @@ function CustomNav(props) {
       <Grid container spacing={8} >
         <Grid item xs>
           <Link to = '/' style = {{color:'black',textDecoration:'none'}}>
-            <div className = {classes.title}>Catalog</div>
+            <div className = {classes.title}>
+            <img src="https://www.pngkey.com/png/full/130-1304595_cartoon-cats-png-animated-black-cat-gif.png" style={{height: '50px'}}></img>
+              Catalog
+            </div>
           </Link>
         </Grid>
         <Grid item xs>
           {/* <div>Hello</div> */}
           <ul className = {classes.list}>
+            <li>EXPLORE</li>
             <Link to = '/' style = {{color:'black',textDecoration:'none'}}>
-              <li>Search</li>
+              <li>SEARCH</li>
             </Link>
             <Link to = '/saved' style = {{color:'black',textDecoration:'none'}}>
-              <li>Saved</li>
+              <li>SAVED</li>
             </Link>
-            <li>Jeff</li>
           </ul>
         </Grid>
       </Grid>
