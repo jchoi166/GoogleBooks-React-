@@ -19,7 +19,8 @@ class Search extends Component {
     state = {
         title: '',
         movieObj: [],
-        saveMovie: {}
+        saveMovie: {},
+        showBorder: false,
     }
 
     componentDidMount () {
@@ -46,6 +47,7 @@ class Search extends Component {
         //     .catch(e => console.log(e))
         // this.setState({movieObj: r.data.items})
         // console.log(this.state.movieObj)
+        // this.setState({showBorder: true})
     }
 
     setBook = event => {
@@ -74,23 +76,22 @@ class Search extends Component {
 
         return (
         
-            <div style ={{position: 'relative', minHeight: '100%'}}>
-            <div style ={{margin: '50px 50px 0px 50px',}}>
+            // <div style ={{ minHeight: '100%'}}>
+            <div style ={{margin: '50px 50px 0px 50px', position: 'relative', minHeight: '100%'}}>
             <CustomNav/>
                 <div style={{paddingBottom: '150px'}}>
                         <form onSubmit= {this.formatTitle} style={{marginTop: "20px"}}>
                             <input value= {this.state.title} onChange = {this.handleChange} type='text' />
                             <button>Press Me</button>
                         </form>
-                        {/* <p>{this.state.title}</p> */}
-                        <div style={{width: '70%'}}>
-                            <ul style={{padding: '0px'}}>
+                        <div style={{width: '70%',}}>
+                            <ul >
                                 {this.state.movieObj.map((book) => 
-                                    <div key={book.id}>
-                                        <a href={`${book.selfLink}`} target='_blank'>{book.volumeInfo.title}</a>
+                                    <div key={book.id} style={{fontFamily: 'Arial', paddingRight:'30px'}}>
                                         <div style={{display:'flex'}}>
-                                            <img src={book.volumeInfo.imageLinks.thumbnail}></img>
+                                            <img src={book.volumeInfo.imageLinks.thumbnail} ></img>
                                             <span>
+                                            <a href={`${book.selfLink}`} target='_blank' style={{textDecoration: 'none', fontWeight: 'bold'}}>{book.volumeInfo.title} </a>
                                             <br/>
                                                 Author:{book.volumeInfo.authors ? book.volumeInfo.authors[0] : 'No Author!'}
                                             <br/>
@@ -101,14 +102,22 @@ class Search extends Component {
                                             </span>
                                         </div>
                                         <button value={book.id} onClick={this.setBook}>Save Movie</button>
+                                        <hr style={{
+                                            width: '90%', 
+                                            margin:'10px', 
+                                            border: '0px',
+                                            height: '0px',
+                                            borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+                                            borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
+                                            }}/>
                                     </div>
                                 )}
                                 </ul>
-                            </div>
-                    </div>
-                    </div>
-            <Footer/>
+                            </div> 
+                    <Footer/>
+                </div>
             </div>
+            // </div>
             
         )
     }

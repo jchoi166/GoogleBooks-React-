@@ -12,12 +12,13 @@ const styles = theme => ({
     // backgroundColor: 'grey',
     backgroundImage: "url('http://www.sclance.com/backgrounds/simple-patterns-background/simple-patterns-background_2018034.png')",
     position: 'absolute',
-    // width: '100%',
-    right: '0',
+    width: '100%',
+    // right: '0',
     bottom: '0',
-    left: '0',
-    padding: '1rem',
+    // left: '0',
+    // padding: '1rem',
     color: 'white',
+    // margin: '0px 20px 0px 20px',
   },
   gridItems: {
       textAlign: 'center'
@@ -30,7 +31,7 @@ function Footer(props) {
 
   return (
     <div className={classes.root}>
-        <Grid container spacing={8}>
+        <Grid container spacing={0}>
             <Grid item xs={12} className={classes.gridItems}>
                 Catalog
             </Grid>
